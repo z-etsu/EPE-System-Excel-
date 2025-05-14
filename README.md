@@ -1,68 +1,103 @@
-# EPE-System-Excel-
-Employee Performance Evaluation System Excel
+# 📝 Employee Performance Evaluation System (Excel/VBA-Based)
 
-Made by Atun, Jaspher G.
+This system evaluates the performance of an employee based on **four criteria**, each with **five sub-criteria**.  
+The evaluation scale ranges from:
 
-This system evaluates the performance of an employee based on four criteria; each with five subcriteria. The evaluation scale ranges from Excellent (5) to Extremely poor (1). There are four evaluators with different weighted percentage: Superior (40%), Colleague (30%), Subordinate (20%), Self-Assessment (10%).
+> **Excellent (5)** to **Extremely Poor (1)**
 
-There are three workbooks: “Employee List”, “Performance Evaluation” & “Employees”.
+There are **four evaluators** with different weightings:
+- **Superior:** 40%
+- **Colleague:** 30%
+- **Subordinate:** 20%
+- **Self-Assessment:** 10%
 
-"Employee List" Workbook:
+---
 
-Sheet of list of all Employees that is hyperlinked to the “Employees” Workbook.
+## 📁 Workbooks Overview
 
-An “Add Employee” Sheet to add employees to the “Employees” Workbook.
- 
-    Two buttons: “Upload Picture” & “Save”
-      1. Upload Picture – Inserts a picture in a certain range of cells and
-        autofits it.
-      2. Save:
-        o Copies the Sheet to the Employees workbook,
-        o Submits the values to the Employee List Sheet,
-        o Hyperlinks the Employee ID on the saved sheet on the
-          Employees workbook,
-        o Change the sheet name based on the Employee ID, protects
-          the sheet and removes the buttons.
-        o Option to clear the current details in the fields.
-        o Dependent Drop-Down List: The Position/Title is dependent on the dropdown list of the Department cell.
+The system consists of three main Excel workbooks:
+1. `Employee List`
+2. `Performance Evaluation`
+3. `Employees`
 
-"Employees" Workbook:
+---
 
-Workbook for all employees. Shows the details and Evaluation Result.
+## 📘 Employee List Workbook
 
+### Sheets:
+- **Employee List**  
+  Contains a list of all employees. Each entry is hyperlinked to the corresponding record in the `Employees` workbook.
 
-    One button: Evaluate
-    
-    1. Opens the Performance Evaluation Workbook and
-    2. Transfers the employee details to it.
-    
-"Performance Evaluation" Workbook:
+- **Add Employee**  
+  A form-style sheet to add new employees.
 
-Three Sheets; Employee, Overview & Dashboard
+### Buttons:
+- **Upload Picture**  
+  - Inserts a picture into a specific cell range and autofits it.
 
-Employee Sheet:
+- **Save**  
+  Performs multiple actions:
+  - Copies the current sheet to the `Employees` workbook.
+  - Submits the values to the Employee List Sheet.
+  - Hyperlinks the Employee ID on the saved sheet in the `Employees` workbook.
+  - Renames the sheet based on Employee ID.
+  - Protects the sheet and removes buttons.
+  - Optionally clears current input fields.
+  - Implements a **dependent dropdown list** (e.g., `Title` depends on selected `Department`).
 
-    ▪ Evaluation sheet to evaluate the employee.
-    ▪ Evaluation scales are made with VLOOKUP along with the Final Score &
-      Remarks.
-    ▪ SUMPRODUCT in the Combined Score along with some arithmetic
-      operators and SUM function for the final score.
-    ▪ Summary: Shows a dashboard of scores of criteria and per evaluator. 
-    ▪ Two Buttons:
-      1. Save to PDF – Saves the evaluation to a pdf format with the name
-      of the employee on the pdf file.
-      2. Submit:
-          o Submits the employee details along with the scores to the
-            Overview sheet.
-          o Hyperlinks the employee ID to the Employee Workbook.
-          o Copies the evaluation score to the Employee Workbook and
-            formats it.
-  Overview Sheet:
-  
-      o Shows all the evaluated employees with their scores.
-      o Employee ID hyperlinked to the Employees Workbook.
-      
-  Dashboard Sheet:
-  
-      o Shows the top employees and department.
-      o Refresh button.
+---
+
+## 📗 Employees Workbook
+
+A centralized workbook containing all employee records and evaluation results.
+
+### Button:
+- **Evaluate**
+  - Opens the `Performance Evaluation` workbook.
+  - Transfers the selected employee's details to it.
+
+---
+
+## 📙 Performance Evaluation Workbook
+
+Contains three sheets:
+- `Employee`
+- `Overview`
+- `Dashboard`
+
+---
+
+### 🧾 Employee Sheet
+
+Used to evaluate the employee.
+
+- Evaluation scales are managed using `VLOOKUP` to determine:
+  - Final Score
+  - Remarks
+- Uses `SUMPRODUCT` and `SUM` functions for weighted scoring.
+- Displays a **summary dashboard** per criterion and evaluator.
+
+#### Buttons:
+1. **Save to PDF**
+   - Exports the evaluation as a PDF, named after the employee.
+
+2. **Submit**
+   - Submits employee data and scores to the `Overview` sheet.
+   - Hyperlinks the Employee ID to the `Employees` workbook.
+   - Copies and formats the final evaluation score back to the `Employees` workbook.
+
+---
+
+### 📄 Overview Sheet
+
+- Displays all evaluated employees and their scores.
+- Each Employee ID is hyperlinked to the `Employees` workbook.
+
+---
+
+### 📊 Dashboard Sheet
+
+- Highlights:
+  - Top-performing employees
+  - Leading departments
+- Includes a **Refresh** button to update the dashboard.
